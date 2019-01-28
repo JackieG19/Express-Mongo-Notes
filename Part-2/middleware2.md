@@ -39,11 +39,11 @@ The flow stops once the response is sent back to the client.
 ```
 Client ----(request comes in)------ app.use(function(req, res, next){
    |                                  ...
-   |                                  next();  // middleware A - calls nexts and middleware B responds back to the client
-   |                                }); 
+   |                                  next();  // middleware A 
+   |                                });  // - calls nexts and middleware B responds back to the client
    |                                   ...
-   |                                  next(); // middleware B - Calling next(); after response is complete will cause errors
-   |                                   ...
+   |                                  next(); // middleware B 
+   |                                   ...   // - Calling next(); after response is complete will cause errors
    |                                  next(); // middleware C
    |
    |
